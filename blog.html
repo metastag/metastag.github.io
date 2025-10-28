@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #0d0e12;
+            color: #8d99ae;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .main-content {
+            padding: 60px 0;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #778da9;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .blog-entry {
+            background-color: #010101;
+            padding: 25px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .blog-entry:hover {
+            transform: translateY(-2px);
+            border-color: #3a3a3a;
+        }
+
+        .blog-entry h3 {
+            color: #4f5aab;
+            margin-bottom: 8px;
+            font-size: 1.4rem;
+        }
+
+        .blog-date {
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+        }
+
+        .blog-excerpt {
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .read-more {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #8d99ae;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        .blog-entry:hover .read-more {
+            color: #a8b3c8;
+            text-decoration-color: #a8b3c8;
+        }
+
+        .blog-content {
+            display: none;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #2a2a2a;
+        }
+
+        .blog-content.active {
+            display: block;
+        }
+
+        .blog-content p {
+            color: #4fab96;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .blog-content h4 {
+            color: #778da9;
+            margin: 20px 0 10px 0;
+            font-size: 1.1rem;
+        }
+
+        .close-blog {
+            color: #8d99ae;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            display: inline-block;
+        }
+
+        .close-blog:hover {
+            color: #a8b3c8;
+            text-decoration-color: #a8b3c8;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .back-link a {
+            color: #8d99ae;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            text-decoration-color: #8d99ae;
+            font-weight: normal;
+            transition: color 0.2s ease;
+            padding: 10px 20px;
+        }
+
+        .back-link a:hover {
+            color: #a8b3c8;
+            text-decoration-color: #a8b3c8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .blog-entry {
+                padding: 20px;
+            }
+
+            .blog-entry h3 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="main-content">
+        <div class="container">
+            <h1 class="page-title">blog</h1>
+
+            <div class="blog-grid">
+
+                <a href="blogs/backend.html" class="blog-entry">
+                    <h3>Backend Systems</h3>
+                    <div class="blog-date">October 28, 2025</div>
+                    <p class="blog-excerpt">designing efficient backend systems...</p>
+                    <span class="read-more">read more</span>
+                </a>
+
+            </div>
+
+            <div class="back-link">
+                <a href="index.html">home</a>
+            </div>
+        </div>
+    </main>
+
+
+</body>
+</html>

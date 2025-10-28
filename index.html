@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #0d0e12;
+            color: #4fab96;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Combined Banner and Profile Section */
+        .banner-profile-section {
+            width: calc(100% - 200px);
+            margin: 100px 100px 12px 100px;
+            border-radius: 12px;
+            background-color: #010101;
+            overflow: hidden;
+        }
+
+        .banner {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-image: url('banner.jpg');
+            background-size: cover;	
+            background-position: center;
+            position: relative;
+        }
+
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-content {
+            padding: 40px;
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-image: url('pfp.jpg');
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-info h1 {
+            font-size: 2.5rem;
+            margin: 0;
+			background-color: #778da9;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .profile-info p {
+            font-size: 1.1rem;
+            margin: 5px 0 0 0;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 60px 0;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #778da9;
+        }
+
+        /* Terminal Styles */
+        .terminal-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .code-terminal {
+            background-color: #010101;
+            color: #4f5aab;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            max-width: 600px;
+            width: 100%;
+            font-family: 'Consolas', monospace;
+        }
+
+        .terminal-header {
+            background-color: #0d0e12;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .terminal-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .btn.red { background-color: #ff5f57; }
+        .btn.yellow { background-color: #ffbd2e; }
+        .btn.green { background-color: #28ca42; }
+
+        .terminal-title {
+            font-size: 0.9rem;
+            margin-left: auto;
+        }
+
+        .terminal-body {
+            padding: 20px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .terminal-line {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 5px;
+        }
+
+        .prompt {
+            color: #ff4444;
+            font-weight: bold;
+        }
+
+        .terminal-output {
+            margin-left: 25px;
+            margin-bottom: 10px;
+        }
+
+        .cursor {
+            color: #ff4444;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        /* Tech Stack List */
+        .tech-list {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .tech-category {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .tech-label {
+            font-weight: bold;
+            margin-right: 10px;
+            min-width: 120px;
+            display: inline-block;
+        }
+
+        .tech-items {
+            color: #4f5aab;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: none;
+            color: #8d99ae;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            text-decoration-color: #8d99ae;
+            font-weight: normal;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: #a8b3c8;
+            text-decoration-color: #a8b3c8;
+        }
+
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .profile-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-info h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .banner {
+                height: 150px;
+            }
+            
+            .banner-profile-section {
+                width: calc(100% - 40px);
+                margin: 60px 20px 12px 20px;
+            }
+            
+            .profile-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Combined Banner and Profile Section -->
+    <section class="banner-profile-section">
+        <div class="banner"></div>
+        <div class="profile-content">
+            <div class="profile-container">
+                <div class="profile-image"></div>
+                <div class="profile-info">
+                    <h1>metastag</h1>
+                    <p>exploring computer science concepts</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Terminal -->
+            <section class="section">
+                <div class="terminal-container">
+                    <div class="code-terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="btn red"></span>
+                                <span class="btn yellow"></span>
+                                <span class="btn green"></span>
+                            </div>
+                            <span class="terminal-title">/etc/os-release</span>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line">
+                                <span class="prompt">$</span>
+                                <span class="command">subjects</span>
+                            </div>
+                            <div class="terminal-output">operating systems, computer networks, distributed systems, automata theory</div>
+                            <br>
+                            <div class="terminal-line">
+                                <span class="prompt">$</span>
+                                <span class="command">future projects</span>
+                            </div>
+                            <div class="terminal-output">chess engine, distributed job-queue, crdt implementation</div>
+                            <br>
+                            <div class="terminal-line">
+                                <span class="prompt">$</span>
+                                <span class="command">favorite distros</span>
+                            </div>
+                            <div class="terminal-output">ubuntu server, mx linux, arco linux</div>
+                            <br>
+                            <div class="terminal-line blinking">
+                                <span class="prompt">$</span>
+                                <span class="cursor">|</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tech Section -->
+            <section class="section">
+                <h2>status</h2>
+                <div class="tech-list">
+                    <div class="tech-category">
+                        <span class="tech-label">languages</span>
+                        <span class="tech-items">python, c, javascript, golang</span>
+                    </div>
+                    <div class="tech-category">
+                        <span class="tech-label">web</span>
+                        <span class="tech-items">html, css, mern stack, next.js</span>
+                    </div>
+                    <div class="tech-category">
+                        <span class="tech-label">tools</span>
+                        <span class="tech-items">git(hub), docker, linux, vim</span>
+                    </div>
+                    <div class="tech-category">
+                        <span class="tech-label">learning</span>
+                        <span class="tech-items">rust</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigation Links -->
+                <div class="nav-links">
+                    <a href="resources.html" class="nav-link">resources</a>
+                    <a href="blog.html" class="nav-link">blog</a>
+                </div>
+    </main>
+
+</body>
+</html>

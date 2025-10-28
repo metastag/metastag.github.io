@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #0d0e12;
+            color: #4fab96;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .main-content {
+            padding: 60px 0;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #778da9;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #778da9;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .resource-card {
+            background-color: #010101;
+            padding: 25px;
+            transition: transform 0.2s ease;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .resource-card h3 {
+            color: #778da9;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .resource-card p {
+            color: #4fab96;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .resource-link {
+            color: #8d99ae;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #8d99ae;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        .resource-link:hover {
+            color: #a8b3c8;
+            text-decoration-color: #a8b3c8;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .back-link a {
+            color: #8d99ae;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            text-decoration-color: #8d99ae;
+            font-weight: normal;
+            transition: color 0.2s ease;
+            padding: 10px 20px;
+        }
+
+        .back-link a:hover {
+            color: #a8b3c8;
+            text-decoration-color: #a8b3c8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+
+            .resource-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .resource-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="main-content">
+        <div class="container">
+            <h1 class="page-title">resources</h1>
+
+            <section class="section">
+                <h2>courses</h2>
+                <div class="resource-grid">
+                    
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>tutorials</h2>
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <h3>Golang Programming Language</h3>
+                        <p>Golang tutorials explained with neat examples</p>
+                        <a href="https://gobyexample.com/" class="resource-link" target="_blank">read more</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>papers</h2>
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <h3>In Search of an Understandable Consensus Algorithm</h3>
+                        <p>Original Paper by the creators of the Raft Consensus Algorithm</p>
+                        <a href="https://gobyexample.com/" class="resource-link" target="_blank">read paper</a>
+                    </div>
+                </div>
+            </section>
+
+            <div class="back-link">
+                <a href="index.html">home</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
